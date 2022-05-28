@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
           textTheme: GoogleFonts.latoTextTheme(),
           // fontFamily: GoogleFonts.blackHanSans().fontFamily
         ),
-        initialRoute: "/login",
+        initialRoute: "/home",
         routes: {
           "/": (context) => LoginPage(),
           "/home": (context) => Home(),

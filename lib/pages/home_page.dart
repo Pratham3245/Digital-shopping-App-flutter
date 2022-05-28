@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  final int i = 30;
-  final String month = "June";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +9,8 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text('In $month there are $i days.'),
+          child:
+              ElevatedButton(onPressed: () {}, child: Text("Go to Login Page")),
         ),
       ),
       drawer: Drawer(),
