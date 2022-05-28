@@ -10,11 +10,7 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context, MyRouts.login);
-              },
-              child: Text("Go back to Login Page")),
+          child: ElevatedButton(onPressed: () {}, child: Text("Submit")),
         ),
       ),
       drawer: Drawer(),

@@ -27,9 +27,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login"),
-      ),
       body: Material(
         color: Colors.white,
         child: SingleChildScrollView(
@@ -37,10 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             key: _formkey,
             child: Column(
               children: [
-                Image.asset(
-                  "images/login.png",
-                  fit: BoxFit.cover,
-                ),
+                Image(image: AssetImage('login.png')),
                 SizedBox(height: 20.0),
                 Text(
                   'Welcome $name',
