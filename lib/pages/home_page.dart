@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
         child: Container(
           child: ElevatedButton(
               onPressed: () {
-                Navigator.popAndPushNamed(context, MyRouts.login);
+                Navigator.pop(context, MyRouts.login);
               },
               child: Text("Go back to Login Page")),
         ),
