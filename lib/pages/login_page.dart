@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             key: _formkey,
             child: Column(
               children: [
-                Image(image: AssetImage('login.png')),
+                Image(image: AssetImage('p.jpeg')),
                 SizedBox(height: 20.0),
                 Text(
                   'Welcome $name',
