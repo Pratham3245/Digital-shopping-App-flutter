@@ -34,7 +34,8 @@ class _LoginPageState extends State<LoginPage> {
             key: _formkey,
             child: Column(
               children: [
-                Image(image: AssetImage('p.jpeg')),
+                Image.network(
+                    'https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=740&t=st=1653899797~exp=1653900397~hmac=5c3ac1ec5be5cfa7a54e0d03618ee7f71996abdc13c8d4e642ddbc5cecbdf4df'),
                 SizedBox(height: 20.0),
                 Text(
                   'Welcome $name',
