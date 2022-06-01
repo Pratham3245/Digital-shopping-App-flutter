@@ -15,9 +15,7 @@ class HomePage extends StatelessWidget {
         themeMode: ThemeMode.light,
         darkTheme: ThemeData(
           brightness: Brightness.dark,
-
           textTheme: GoogleFonts.latoTextTheme(),
-          // fontFamily: GoogleFonts.blackHanSans().fontFamily
         ),
         debugShowCheckedModeBanner: false,
         initialRoute: MyRouts.home,
