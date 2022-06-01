@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapplicationone/utils/routs.dart';
+import 'package:myapplicationone/widgets/theme.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   'Welcome $name',
                   style: TextStyle(
                       fontSize: 28,
-                      color: Color(0xFF2196F3),
+                      color: MyTheme.bluecolor,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20.0),
@@ -79,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 40.0),
                       Material(
-                        color: Colors.blue,
+                        color: MyTheme.bluecolor,
                         borderRadius: BorderRadius.circular(8),
                         child: InkWell(
                           onTap: () => ToHome(context),
