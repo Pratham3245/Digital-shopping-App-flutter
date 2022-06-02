@@ -27,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    FocusNode myFoucusNode = new FocusNode();
     return Scaffold(
       body: Material(
         color: Colors.white,
@@ -52,8 +53,17 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       TextFormField(
+                        focusNode: myFoucusNode,
                         decoration: InputDecoration(
-                            hintText: 'Enter Username', labelText: 'Username'),
+                            hintText: 'Enter Username',
+                            labelText: 'Username',
+                            labelStyle: TextStyle(
+                                color: myFoucusNode.hasFocus
+                                    ? Colors.blue
+                                    : MyTheme.bluecolor),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: MyTheme.bluecolor))),
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Username can't be empty";
@@ -65,10 +75,19 @@ class _LoginPageState extends State<LoginPage> {
                           setState(() {});
                         },
                       ),
+                      SizedBox(height: 10.0),
                       TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
-                            hintText: 'Enter Password', labelText: 'Passsword'),
+                            hintText: 'Enter Password',
+                            labelText: 'Passsword',
+                            labelStyle: TextStyle(
+                                color: myFoucusNode.hasFocus
+                                    ? Colors.blue
+                                    : MyTheme.bluecolor),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: MyTheme.bluecolor))),
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Password can't be empty";

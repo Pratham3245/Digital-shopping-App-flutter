@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:myapplicationone/utils/routs.dart';
 import 'pages/home_page.dart';
@@ -18,11 +19,11 @@ class HomePage extends StatelessWidget {
           textTheme: GoogleFonts.latoTextTheme(),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: MyRouts.home,
+        initialRoute: MyRouts.login,
         routes: {
-          "/": (context) => LoginPage(),
+          "/login": (context) => LoginPage(),
           MyRouts.home: (context) => Home(),
-          MyRouts.login: (context) => LoginPage(),
+          MyRouts.detail: (context) => LoginPage(),
         });
   }
 }

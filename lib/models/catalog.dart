@@ -1,7 +1,16 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item> product = [];
+  static List<Item> product = [
+    Item(
+        id: 1,
+        name: "iphone 13",
+        dec: "IOS 9th Series",
+        price: 899,
+        color: "#33505a",
+        image:
+            "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631852794/Croma%20Assets/Communication/Mobiles/Images/243488_purmiw.png/mxw_640,f_auto")
+  ];
 }
 
 class Item {
@@ -52,12 +61,12 @@ class Item {
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
-      id: map['id'] as int,
-      name: map['name'] as String,
-      dec: map['dec'] as String,
-      price: map['price'] as num,
-      color: map['color'] as String,
-      image: map['image'] as String,
+      id: map['id'],
+      name: map['name'],
+      dec: map['dec'],
+      price: map['price'],
+      color: map['color'],
+      image: map['image'],
     );
   }
 
