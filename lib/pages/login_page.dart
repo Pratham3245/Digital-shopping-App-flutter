@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapplicationone/utils/routs.dart';
 import 'package:myapplicationone/widgets/theme.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
     FocusNode myFoucusNode = new FocusNode();
     return Scaffold(
       body: Material(
-        color: Colors.white,
+        color: context.canvasColor,
         child: SingleChildScrollView(
           child: Form(
             key: _formkey,
@@ -43,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                   'Welcome $name',
                   style: TextStyle(
                       fontSize: 28,
-                      color: MyTheme.bluecolor,
+                      color: context.accentColor,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20.0),
@@ -60,10 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                             labelStyle: TextStyle(
                                 color: myFoucusNode.hasFocus
                                     ? Colors.blue
-                                    : MyTheme.bluecolor),
+                                    : context.accentColor),
                             focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: MyTheme.bluecolor))),
+                                    BorderSide(color: context.accentColor))),
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Username can't be empty";
@@ -84,10 +85,10 @@ class _LoginPageState extends State<LoginPage> {
                             labelStyle: TextStyle(
                                 color: myFoucusNode.hasFocus
                                     ? Colors.blue
-                                    : MyTheme.bluecolor),
+                                    : context.accentColor),
                             focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: MyTheme.bluecolor))),
+                                    BorderSide(color: context.accentColor))),
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "Password can't be empty";
@@ -99,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 40.0),
                       Material(
-                        color: MyTheme.bluecolor,
+                        color: context.theme.buttonColor,
                         borderRadius: BorderRadius.circular(8),
                         child: InkWell(
                           onTap: () => ToHome(context),

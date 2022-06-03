@@ -9,6 +9,15 @@ class CatalogImage extends StatelessWidget {
   const CatalogImage({Key? key, required this.image}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Image.network(image).box.py8.rounded.make().py16().w32(context);
+    return Image.network(image)
+        .box
+        .p4
+        .color(context.canvasColor)
+        .rounded
+        .make()
+        .pOnly(right: 16.0)
+        .pOnly(left: 16.0)
+        .py16()
+        .w40(context);
   }
 }

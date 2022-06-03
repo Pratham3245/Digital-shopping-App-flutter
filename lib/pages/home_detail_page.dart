@@ -13,11 +13,13 @@ class HomeDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
-        backgroundColor: MyTheme.bluecolor,
+        foregroundColor: MyTheme.bluecolor,
+        backgroundColor: Colors.transparent,
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -25,16 +27,15 @@ class HomeDetail extends StatelessWidget {
             "\$${catalog.price}".text.bold.xl4.make(),
             ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.bluecolor),
+                        backgroundColor: MaterialStateProperty.all(
+                            context.theme.buttonColor),
                         shape: MaterialStateProperty.all(StadiumBorder())),
                     onPressed: () {},
-                    child: "Buy".text.make())
-                .wh(100, 50)
+                    child: "Add to Cart".text.make())
+                .wh(120, 50)
           ],
         ).p32(),
       ),
-      backgroundColor: MyTheme.creamcolor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -49,12 +50,12 @@ class HomeDetail extends StatelessWidget {
                     arcType: VxArcType.CONVEY,
                     edge: VxEdge.TOP,
                     child: Container(
-                      color: Colors.white,
+                      color: context.cardColor,
                       width: context.screenWidth,
                       child: Column(
                         children: [
                           catalog.name.text.bold.xl4
-                              .color(MyTheme.bluecolor)
+                              .color(context.accentColor)
                               .make(),
                           catalog.dec.text
                               .textStyle(context.captionStyle)
