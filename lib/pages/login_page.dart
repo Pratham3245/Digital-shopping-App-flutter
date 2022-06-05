@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: context.accentColor,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 20.0),
+                SizedBox(height: 40.0),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 16.0, horizontal: 32.0),
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                           setState(() {});
                         },
                       ),
-                      SizedBox(height: 10.0),
+                      SizedBox(height: 20.0),
                       TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(

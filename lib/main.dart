@@ -1,17 +1,19 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
+import 'package:myapplicationone/core/store.dart';
 import 'package:myapplicationone/pages/cart.dart';
 import 'package:myapplicationone/utils/routs.dart';
 import 'package:myapplicationone/widgets/theme.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(HomePage());
+  runApp(VxState(store: MyStore(), child: MyApp()));
 }
 
-class HomePage extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

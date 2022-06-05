@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
+import 'package:myapplicationone/core/store.dart';
+import 'package:myapplicationone/models/cart_List.dart';
 import 'package:myapplicationone/utils/routs.dart';
 import 'package:myapplicationone/widgets/theme.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -38,14 +40,23 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
         backgroundColor: context.canvasColor,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRouts.cart),
-          backgroundColor: context.theme.buttonColor,
-          child: Icon(
-            CupertinoIcons.cart,
-          ),
+        floatingActionButton: VxBuilder(
+          mutations: {AddMutation, RemoveMutation},
+          builder: (ctx, _) => FloatingActionButton(
+            onPressed: () => Navigator.pushNamed(context, MyRouts.cart),
+            backgroundColor: context.theme.buttonColor,
+            child: Icon(
+              CupertinoIcons.cart,
+            ),
+          ).badge(
+              size: 20,
+              color: MyTheme.creamcolor,
+              count: _cart.items.length,
+              textStyle:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         ),
         body: SafeArea(
           child: Container(
@@ -59,7 +70,7 @@ class _HomeState extends State<Home> {
                   CatalogList().expand()
                 else
                   Center(
-                    child: CircularProgressIndicator().expand().centered(),
+                    child: CircularProgressIndicator().centered().expand(),
                   )
               ],
             ),

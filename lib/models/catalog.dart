@@ -1,16 +1,12 @@
 import 'dart:convert';
 
 class CatalogModel {
-  static List<Item> product = [
-    Item(
-        id: 1,
-        name: "iphone 13",
-        dec: "IOS 9th Series",
-        price: 899,
-        color: "#33505a",
-        image:
-            "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631852794/Croma%20Assets/Communication/Mobiles/Images/243488_purmiw.png/mxw_640,f_auto")
-  ];
+  static List<Item> product = [];
+
+  Item getById(int id) =>
+      product.firstWhere((element) => element.id == id, orElse: null);
+
+  Item getByPosition(int pos) => product[pos];
 }
 
 class Item {
