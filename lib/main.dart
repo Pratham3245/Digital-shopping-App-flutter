@@ -2,11 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:myapplicationone/core/store.dart';
 import 'package:myapplicationone/pages/cart.dart';
+import 'package:myapplicationone/pages/login.dart';
+import 'package:myapplicationone/pages/register.dart';
 import 'package:myapplicationone/utils/routs.dart';
 import 'package:myapplicationone/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'pages/home_page.dart';
-import 'pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -23,9 +24,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: MyRouts.login,
         routes: {
-          "/login": (context) => LoginPage(),
+          "/login": (context) => MyLogin(),
+          MyRouts.register: (context) => MyRegister(),
           MyRouts.home: (context) => Home(),
-          MyRouts.detail: (context) => LoginPage(),
+          MyRouts.detail: (context) => MyLogin(),
           MyRouts.cart: (context) => CartPage(),
         });
   }
