@@ -11,6 +11,13 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
+  final _formkey = GlobalKey<FormState>();
+  toHome(BuildContext context) async {
+    if (_formkey.currentState!.validate()) {
+      await Navigator.pushNamed(context, MyRouts.home);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,6 +39,7 @@ class _MyLoginState extends State<MyLogin> {
             ),
             SingleChildScrollView(
               child: Form(
+                key: _formkey,
                 child: Container(
                   padding: EdgeInsets.only(
                       top: MediaQuery.of(context).size.height * 0.5),
@@ -96,20 +104,17 @@ class _MyLoginState extends State<MyLogin> {
                                       fontSize: 27,
                                       fontWeight: FontWeight.w700),
                                 ),
-                                InkWell(
-                                  child: CircleAvatar(
-                                    radius: 30,
-                                    backgroundColor: Color(0xff4c505b),
-                                    child: IconButton(
-                                        color: Colors.white,
-                                        onPressed: () {
-                                          Navigator.pushNamed(
-                                              context, MyRouts.home);
-                                        },
-                                        icon: Icon(
-                                          Icons.arrow_forward,
-                                        )),
-                                  ),
+                                CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor: Color(0xff4c505b),
+                                  child: IconButton(
+                                      color: Colors.white,
+                                      onPressed: () {
+                                        toHome(context);
+                                      },
+                                      icon: Icon(
+                                        Icons.arrow_forward,
+                                      )),
                                 ),
                               ],
                             ),

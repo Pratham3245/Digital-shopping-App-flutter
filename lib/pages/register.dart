@@ -13,7 +13,7 @@ class _MyRegisterState extends State<MyRegister> {
   final _formkey = GlobalKey<FormState>();
   toLogin(BuildContext context) async {
     if (_formkey.currentState!.validate()) {
-      await Navigator.pushNamed(context, MyRouts.register);
+      await Navigator.pushNamed(context, MyRouts.login);
     }
   }
 
@@ -39,170 +39,171 @@ class _MyRegisterState extends State<MyRegister> {
                 style: TextStyle(color: Colors.white, fontSize: 33),
               ),
             ),
-            SingleChildScrollView(
-              child: Form(
-                key: _formkey,
-                child: Container(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * 0.28),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 35, right: 35),
-                        child: Column(
-                          children: [
-                            TextFormField(
-                              style: TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
+            Form(
+              child: SingleChildScrollView(
+                child: Form(
+                  key: _formkey,
+                  child: Container(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.28),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 35, right: 35),
+                          child: Column(
+                            children: [
+                              TextFormField(
+                                style: TextStyle(color: Colors.white),
+                                decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide(
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
-                                      color: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
                                     ),
-                                  ),
-                                  hintText: "Name",
-                                  labelText: "Enter Name",
-                                  labelStyle: TextStyle(color: Colors.white),
-                                  hintStyle: TextStyle(color: Colors.white),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  )),
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "name can't be empty";
-                                }
-                                return null;
-                              },
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            TextFormField(
-                              style: TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
+                                    hintText: "Name",
+                                    labelText: "Enter Name",
+                                    labelStyle: TextStyle(color: Colors.white),
+                                    hintStyle: TextStyle(color: Colors.white),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )),
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "name can't be empty";
+                                  }
+                                  return null;
+                                },
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              TextFormField(
+                                style: TextStyle(color: Colors.white),
+                                decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide(
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
-                                      color: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
                                     ),
-                                  ),
-                                  hintText: "Email",
-                                  labelText: "Enter Email",
-                                  labelStyle: TextStyle(color: Colors.white),
-                                  hintStyle: TextStyle(color: Colors.white),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  )),
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "Email can't be empty";
-                                }
-                                return null;
-                              },
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            TextFormField(
-                              style: TextStyle(color: Colors.white),
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
+                                    hintText: "Email",
+                                    labelText: "Enter Email",
+                                    labelStyle: TextStyle(color: Colors.white),
+                                    hintStyle: TextStyle(color: Colors.white),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )),
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "Email can't be empty";
+                                  }
+                                  return null;
+                                },
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              TextFormField(
+                                style: TextStyle(color: Colors.white),
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide(
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide: BorderSide(
-                                      color: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
                                     ),
+                                    hintText: "Password",
+                                    labelText: "Enter Passsword",
+                                    labelStyle: TextStyle(color: Colors.white),
+                                    hintStyle: TextStyle(color: Colors.white),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    )),
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "Password can't be empty";
+                                  }
+                                  return null;
+                                },
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Sign Up',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 27,
+                                        fontWeight: FontWeight.w700),
                                   ),
-                                  hintText: "Password",
-                                  labelText: "Enter Passsword",
-                                  labelStyle: TextStyle(color: Colors.white),
-                                  hintStyle: TextStyle(color: Colors.white),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  )),
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "Password can't be empty";
-                                }
-                                return null;
-                              },
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Sign Up',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 27,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                                InkWell(
-                                  onTap: () => toLogin(context),
-                                  child: CircleAvatar(
+                                  CircleAvatar(
                                     radius: 30,
                                     backgroundColor: Color(0xff4c505b),
                                     child: IconButton(
                                         color: Colors.white,
                                         onPressed: () {
-                                          Navigator.pushNamed(
-                                              context, MyRouts.login);
+                                          toLogin(context);
                                         },
                                         icon: Icon(
                                           Icons.arrow_forward,
                                         )),
                                   ),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.pushNamed(context, MyRouts.login);
-                                  },
-                                  child: Text(
-                                    'Sign In',
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                        decoration: TextDecoration.underline,
-                                        color: Colors.white,
-                                        fontSize: 18),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pushNamed(
+                                          context, MyRouts.login);
+                                    },
+                                    child: Text(
+                                      'Sign In',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          decoration: TextDecoration.underline,
+                                          color: Colors.white,
+                                          fontSize: 18),
+                                    ),
+                                    style: ButtonStyle(),
                                   ),
-                                  style: ButtonStyle(),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      )
-                    ],
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
