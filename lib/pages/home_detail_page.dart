@@ -1,4 +1,5 @@
 // ignore: import_of_legacy_library_into_null_safe
+
 import 'package:myapplicationone/models/catalog.dart';
 import 'package:myapplicationone/widgets/Home_widgets/add_to_cart.dart';
 import 'package:myapplicationone/widgets/theme.dart';
@@ -53,10 +54,7 @@ class HomeDetail extends StatelessWidget {
                           catalog.name.text.bold.xl4
                               .color(context.accentColor)
                               .make(),
-                          catalog.dec.text
-                              .textStyle(context.captionStyle)
-                              .xl
-                              .make(),
+                          catalog.dec.text.xl.make(),
                           10.heightBox,
                         ],
                       ).py64(),

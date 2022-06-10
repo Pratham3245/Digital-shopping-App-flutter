@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
         backgroundColor: context.canvasColor,
         floatingActionButton: VxBuilder(
           mutations: {AddMutation, RemoveMutation},
-          builder: (ctx, _) => FloatingActionButton(
+          builder: (ctx, store, status) => FloatingActionButton(
             onPressed: () => Navigator.pushNamed(context, MyRouts.cart),
             backgroundColor: context.theme.buttonColor,
             child: Icon(

@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapplicationone/core/store.dart';
 import 'package:myapplicationone/pages/cart.dart';
@@ -9,8 +10,11 @@ import 'package:myapplicationone/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(VxState(store: MyStore(), child: MyApp()));
 }
 

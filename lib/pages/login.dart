@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapplicationone/provider/google_sign_in.dart';
 import 'package:velocity_x/velocity_x.dart';
-
+import 'package:google_sign_in/google_sign_in.dart';
 import '../utils/routs.dart';
 
 class MyLogin extends StatefulWidget {
@@ -116,6 +118,27 @@ class _MyLoginState extends State<MyLogin> {
                                         Icons.arrow_forward,
                                       )),
                                 ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: Colors.transparent,
+                                  child: InkWell(
+                                      onTap: () {
+                                        signInWithGoogle().then((result) {
+                                          if (result != null) {
+                                            Navigator.pushNamed(
+                                                context, MyRouts.home);
+                                          }
+                                        });
+                                      },
+                                      child: Image.asset('assets/google.png')),
+                                )
                               ],
                             ),
                             SizedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../provider/google_sign_in.dart';
 import '../utils/routs.dart';
 
 class MyRegister extends StatefulWidget {
@@ -173,6 +174,28 @@ class _MyRegisterState extends State<MyRegister> {
                                           Icons.arrow_forward,
                                         )),
                                   ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 40,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CircleAvatar(
+                                    backgroundColor: Colors.transparent,
+                                    child: InkWell(
+                                        onTap: () {
+                                          signInWithGoogle().then((result) {
+                                            if (result != null) {
+                                              Navigator.pushNamed(
+                                                  context, MyRouts.home);
+                                            }
+                                          });
+                                        },
+                                        child:
+                                            Image.asset('assets/google.png')),
+                                  )
                                 ],
                               ),
                               SizedBox(

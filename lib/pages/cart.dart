@@ -38,7 +38,7 @@ class CartTotal extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           VxBuilder(
-            builder: (context, _) {
+            builder: (context, store, status) {
               return "\$${_cart.totalPrice}"
                   .text
                   .xl5
@@ -67,7 +67,7 @@ class CartTotal extends StatelessWidget {
 class CartList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    VxState.listen(context, to: [RemoveMutation]);
+    VxState.watch(context, on: [RemoveMutation]);
 
     final CartModel _cart = (VxState.store as MyStore).cart;
 
