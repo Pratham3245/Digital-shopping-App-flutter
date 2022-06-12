@@ -14,21 +14,40 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ElevatedButton(
-          style: ButtonStyle(
-              backgroundColor:
-                  MaterialStateProperty.all(context.theme.buttonColor),
-              shape: MaterialStateProperty.all(StadiumBorder())),
-          onPressed: () {
+        // ElevatedButton(
+        //   style: ButtonStyle(
+        //       backgroundColor: MaterialStateProperty.all(MyTheme.creamcolor),
+        //       shape: MaterialStateProperty.all(StadiumBorder())),
+        //   onPressed: () {
+        //     signOutGoogle();
+        //     // Navigator.pushNamed(context, MyRouts.login);
+        //     Navigator.of(context).pushAndRemoveUntil(
+        //         MaterialPageRoute(builder: (context) {
+        //       return MyLogin();
+        //     }), ModalRoute.withName('/'));
+        //   },
+        //   child: CircleAvatar(
+        //       child: Icon(
+        //     Icons.logout,
+        //   )).wh10(context),
+        // ).pOnly(left: 240),
+        InkWell(
+          onTap: () {
             signOutGoogle();
-            // Navigator.pushNamed(context, MyRouts.login);
+            Navigator.pushNamed(context, MyRouts.login);
             Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(builder: (context) {
               return MyLogin();
             }), ModalRoute.withName('/'));
           },
-          child: "Sign out".text.make(),
-        ).pOnly(left: 240),
+          child: CircleAvatar(
+            backgroundColor: MyTheme.bluecolor,
+            child: Icon(
+              CupertinoIcons.square_arrow_left,
+              color: Colors.white,
+            ),
+          ).pOnly(left: 270),
+        ),
         "Catalog App".text.xl5.bold.color(context.theme.accentColor).make(),
         "Trending Products".text.xl2.make(),
         SizedBox(
