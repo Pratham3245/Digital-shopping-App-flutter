@@ -1,0 +1,53 @@
+{
+    "products":[
+        {
+            "id" : 1,
+            "name" :  "iphone 13",
+            "dec" : "IOS 9th Series",
+            "price" : 899,
+            "color" : "#33505a",
+            "image" : "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631852794/Croma%20Assets/Communication/Mobiles/Images/243488_purmiw.png/mxw_640,f_auto"
+        },
+        {
+            "id" : 2,
+            "name" :  "Samsung s22",
+            "dec" : "Android 12",
+            "price" : 890,
+            "color" : "#33505a",
+            "image" : "https://images.samsung.com/is/image/samsung/p6pim/in/2202/gallery/in-galaxy-s22-s901-412948-sm-s901ezgdinu-530964621?$650_519_PNG$"
+        },
+        {
+            "id" : 3,
+            "name" :  "iphone 13 pro max",
+            "dec" :  "IOS 9th Series",
+            "price" : 949,
+            "color" : "#33505a",
+            "image" : "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631859023/Croma%20Assets/Communication/Mobiles/Images/243530_l53fy0.png/mxw_2048,f_auto"
+        },
+        {
+            "id" : 4,
+            "name" :  "Samsung Galaxy ZFold",
+            "dec" : "Android 12",
+            "price" : 999,
+            "color" : "#33505a",
+            "image" : "https://images.samsung.com/is/image/samsung/ph/galaxy-note20/gallery/ph-galaxy-z-fold2-f916-sm-f916bznaxtc-frontmysticbronze-thumb-273584105"
+        },
+        {
+            "id" : 5,
+            "name" :  "Apple Watch Series 7 ",
+            "dec" :  "IOS 9th Series",
+            "price" : 599,
+            "color" : "#33505a",
+            "image" : "https://cdn.ivenus.in//wp-content/uploads/2021/10/r1450_GPS_41mm_Midnight_Aluminum_Midnight_Sport_Band_PDP_Image_Position-1_Avail__en-IN.png"
+        },
+        {
+            "id" : 6,
+            "name" :  "Galaxy Watch4",
+            "dec" : "Android 12",
+            "price" : 599,
+            "color" : "#33505a",
+            "image" : "https://images.samsung.com/is/image/samsung/p6pim/in/2108/gallery/in-galaxy-watch4-398887-sm-r875fzgainu-481111530?$1300_1038_PNG$"
+        }
+
+    ]
+}
