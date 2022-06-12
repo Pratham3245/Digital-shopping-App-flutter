@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
                   CatalogList().expand()
                 else
                   Center(
-                    child: CircularProgressIndicator().centered().expand(),
+                    child: CircularProgressIndicator().expand().centered(),
                   )
               ],
             ),

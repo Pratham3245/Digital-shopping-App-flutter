@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:myapplicationone/pages/login.dart';
 import 'package:myapplicationone/utils/routs.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:velocity_x/velocity_x.dart';
@@ -13,8 +14,6 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Catalog App".text.xl5.bold.color(context.theme.accentColor).make(),
-        "Trending Products".text.xl2.make(),
         ElevatedButton(
           style: ButtonStyle(
               backgroundColor:
@@ -22,11 +21,19 @@ class CatalogHeader extends StatelessWidget {
               shape: MaterialStateProperty.all(StadiumBorder())),
           onPressed: () {
             signOutGoogle();
-            Navigator.pushNamed(context, MyRouts.login);
-            //       "sign out".text.white.make();
+            // Navigator.pushNamed(context, MyRouts.login);
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) {
+              return MyLogin();
+            }), ModalRoute.withName('/'));
           },
           child: "Sign out".text.make(),
-        ).pOnly(left: 240)
+        ).pOnly(left: 240),
+        "Catalog App".text.xl5.bold.color(context.theme.accentColor).make(),
+        "Trending Products".text.xl2.make(),
+        SizedBox(
+          height: 20,
+        ),
       ],
     );
   }
