@@ -1,6 +1,5 @@
-# myapplicationone
+# Digital Shopping App
 
-A new Flutter project.
 
 ## Getting Started
 
